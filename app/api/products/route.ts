@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     const parsed = parseApiBody(productSchema, body);
     const product = await createProduct({
       name: parsed.name,
-      sku: parsed.sku,
+      sku: parsed.sku ?? null,
       category: parsed.category,
       quantity: parsed.quantity,
       price: parsed.price,
